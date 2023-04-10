@@ -24,7 +24,7 @@
 <meta property="og:description" content="1、JDK：Java开发工具包，包括JVM虚拟机，核心类库，开发工具。JRE：Java运行环境。JDK包含了JRE，JRE包含了JVM。   2、class：创建&#x2F;定义一个类，类是Java最基本的组成单元。   3、计算机三原色：红、绿、蓝&#x3D;》rbg。   4、数据类型： ​			整型：byte、short、int（默认）、long。定义long类型的变量，在数值后面需要加一个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-27T05:21:56.000Z">
-<meta property="article:modified_time" content="2023-04-10T00:20:21.517Z">
+<meta property="article:modified_time" content="2023-04-10T09:02:10.720Z">
 <meta property="article:author" content="Xiaoting Zhang">
 <meta property="article:tag" content="Java从0开始">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.8k 字
+          4.3k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          32 分钟
+          36 分钟
         
       </span>
     
@@ -378,18 +378,73 @@
 <p>解决方法：自动类型转换、强制类型转换，可以转换成真正的子类类型，从而调用子类独有功能。</p>
 <p>转换类型与真实对象类型不一致会报错。</p>
 <p>转换的时候用instanceof关键字进行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Person p=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();<br>Student s=(Student) p;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Person p=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();  <span class="hljs-comment">//自动类型转换</span><br>Student s=(Student) p;   <span class="hljs-comment">//强制类型转换</span><br></code></pre></td></tr></table></figure>
 
 
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//多态形式创建对象</span><br>Fu f=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Zi</span>();<br><span class="hljs-comment">//调用成员变量的特点：编译看左边，运行也看左边。</span><br><span class="hljs-comment">//调用成员方法的特点：编辑看左边，运行看右边。</span><br><span class="hljs-comment">//编译看左边：javac编译代码的时候，会看左边的父类中有没有这个变量或方法，如果有，编辑成功，如果没有，编辑失败。</span><br><span class="hljs-comment">//运行看左边：java运行代码的时候，实际获取的是左边父类中成员变量的值。</span><br><span class="hljs-comment">//运气看右边；java运行代码的时候，实际上运行的是子类中的方法。</span><br><br><span class="hljs-comment">//理解：Animal A=new Dog();</span><br><span class="hljs-comment">//现在用a去调用变量和方法？是的</span><br><span class="hljs-comment">//而a是Animal类型的，所以默认都会从Animal这个类中找</span><br><br><span class="hljs-comment">//成员变量：在子类的对象中，会把父类的成员变量也继承下来。父：name,子：name</span><br><span class="hljs-comment">//成员方法：如果子类对方法进行了重写，那么在虚方法表中是会把父类的方法进行覆盖的。</span><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//多态形式创建对象</span><br>Fu f=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Zi</span>();<br><span class="hljs-comment">//调用成员变量的特点：编译看左边，运行也看左边。</span><br><span class="hljs-comment">//调用成员方法的特点：编辑看左边，运行看右边。</span><br><span class="hljs-comment">//编译看左边：javac编译代码的时候，会看左边的父类中有没有这个变量或方法，如果有，编辑成功，如果没有，编辑失败。</span><br><span class="hljs-comment">//运行看左边：java运行代码的时候，实际获取的是左边父类中成员变量的值。</span><br><span class="hljs-comment">//运行看右边；java运行代码的时候，实际上运行的是子类中的方法。</span><br><br><span class="hljs-comment">//理解：Animal A=new Dog();</span><br><span class="hljs-comment">//现在用a去调用变量和方法？是的</span><br><span class="hljs-comment">//而a是Animal类型的，所以默认都会从Animal这个类中找</span><br><br><span class="hljs-comment">//成员变量：在子类的对象中，会把父类的成员变量也继承下来。父：name,子：name</span><br><span class="hljs-comment">//成员方法：如果子类对方法进行了重写，那么在虚方法表中是会把父类的方法进行覆盖的。</span><br><br></code></pre></td></tr></table></figure>
 
+</br>
 
+<p>23、使用同一个包中的类时，不需要导包。</p>
+<p>使用java.lang包中的类时，不需要导包。</p>
+<p>其他情况都需要导包。</p>
+<p>如果同时用两个包中的同名类，需要用全类名。</p>
+</br>
 
+<p>24、final关键词：</p>
+<p>修饰方法：表明该方法时最终方法，不能被重写。</p>
+<p>类：表明该类时最终类，不能被继承。</p>
+<p>变量：叫做常量，只能被赋值一次。</p>
+<p>final修饰基本数据类型，记录的值不能发生改变，修饰引用数据类型，记录的地址值不能发生变化，内部的属性值是可以改变的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> Student S=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;张三&quot;</span>，<span class="hljs-number">14</span>)；<br>S=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Sutdent</span>();  <span class="hljs-comment">//会报错</span><br>S.setName(<span class="hljs-string">&quot;李四&quot;</span>);  <span class="hljs-comment">//不会报错，并且可以修改成功。</span><br></code></pre></td></tr></table></figure>
 
+</br>
 
+<p>25、权限修饰符分类 </p>
+<p>四种作用范围从小到大（private&lt;空着不写&lt;protected&lt;public）</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>同一个类中</th>
+<th>同一个包中其他类</th>
+<th>不同包下的子类</th>
+<th>不同包下的无关类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>private</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>空着不写</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody></table>
+</br>
 
-
+<p>26、静态代码块作用：数据初始化。</p>
 
                 
               </div>
