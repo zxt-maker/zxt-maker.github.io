@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/2023/05/29/img/JavaSE/image-20231031093535696.png">
 <meta property="og:image" content="http://example.com/2023/05/29/img/JavaSE/image-20231110141044484.png">
 <meta property="article:published_time" content="2023-05-29T08:43:52.000Z">
-<meta property="article:modified_time" content="2023-11-10T06:27:28.363Z">
+<meta property="article:modified_time" content="2023-11-28T02:18:52.323Z">
 <meta property="article:author" content="Xiaoting Zhang">
 <meta property="article:tag" content="SE基础第二阶段">
 <meta name="twitter:card" content="summary_large_image">
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.5k 字
+          6.1k 字
         
       </span>
     
@@ -236,7 +236,7 @@
         
         
         
-          47 分钟
+          51 分钟
         
       </span>
     
@@ -397,7 +397,42 @@
 <p>​												  BufferedWriter	：newline（）</p>
 <img src="../img/JavaSE/image-20231110141044484.png" srcset="/img/loading.gif" lazyload alt="image-20231110141044484" />
 
-<p>222</p>
+<p> 常用工具包：commons-io FileUtils工具类</p>
+<p>9、多线程</p>
+<p>​	并发：在同一时刻，有多个指令在单个CPU上交替执行</p>
+<p>​	并行：在同一时刻，有多个指令在多个CPU上同时执行</p>
+</br>
+
+<p>同步代码块（锁）：</p>
+<p>​	1、锁默认打开，有一个线程进去了，锁自动关闭。</p>
+<p>​	2、里面的代码全部执行完毕，线程出来，锁自动打开。</p>
+<p>格式：</p>
+<p>​	&#x2F;&#x2F;锁对象一定要是唯一的，可以在对象前加static关键字</p>
+<p>​	synchronized（锁对象）{</p>
+<p>​		操作共享数据的代码</p>
+<p>​	}</p>
+</br>
+
+<p>10、网络编程</p>
+<p>三要素：ip、端口号、协议</p>
+<p>ip:设备在网络中的地址，是唯一的标识</p>
+<p>端口号：应用程序在设备中唯一的标识</p>
+<p>协议：数据在网络中传输的规则，常见的有UDP、TCP、http、https、ftp</p>
+<p>特殊的ip:172.0.0.1（永远表示本机）</p>
+<p>UDP协议：面向无连接通信协议（速度快，数据不安全，容易丢失数据）</p>
+<p>TCP:协议：面向连接的通信协议（速度慢，数据安全）</p>
+</br>
+
+<p>11、反射</p>
+<p>获取class对象的三种方式：</p>
+<p>1、Class.forName(“全类名”)   &#x2F;&#x2F;最为常用</p>
+<p>2、类名.class   &#x2F;&#x2F;更多是当作参数进行传递</p>
+<p>3、对象.getClass()   &#x2F;&#x2F;当有了这个类的对象时，才可以使用。</p>
+</br>
+
+<p>12、动态代理</p>
+<p>通过接口保证，后面的对象和代码需要实现同一个接口。</p>
+<p>接口中就是被代理的所有方法。</p>
 
                 
               </div>
